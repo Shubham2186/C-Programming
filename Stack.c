@@ -37,6 +37,14 @@ int pop() {
     s->top--;
     return val;
 }
+int peek(int pos) {
+    int d = s->top - pos + 1;
+    if(d<0) {
+        printf("Invalid Position!!\n");
+        return -1;
+    }
+    return s->arr[d];
+} 
 int main() {
     s = (Stack*)malloc(sizeof(Stack));
     int n;
@@ -60,6 +68,7 @@ int main() {
     push(7);
     push(8);
     push(9);
+    printf("%d\n",peek(3));
     if(isEmpty()) {
         printf("Stack is empty!");
     } else {
