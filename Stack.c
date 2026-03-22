@@ -5,11 +5,9 @@ typedef struct stack {
     int top;
     int *arr;
 } Stack;
-Stack s1;
-Stack *s = &s1;
+Stack *s;
 int isEmpty() {
     if(s->top == -1) {
-        // printf("Stack is empty!!");
         return 1;
     }
     return 0;
@@ -17,33 +15,32 @@ int isEmpty() {
 
 int isFull() {
     if(s->top == s->size-1) {
-        // printf("Stack is full!!");
         return 1;
     }
     return 0;
 }
 void push(int val) {
     if(isFull()) {
-        printf("Stack Overflow!!\n");
+        printf("Stack Overflow!!\nCannot push %d to stack.\n",val);
         return;
     }
     s->top++;
     s->arr[s->top] = val;
-    printf("Pushed %d to the satck!\n",val);
+    printf("Pushed %d to the satck!\n",val); // no need to do this, avoid
 }
-void pop() {
+int pop() {
     if(isEmpty()) {
-        printf("Stack underflow!!");
-        return;
+        printf("Stack underflow!!\n");
+        return -1;
     }
-    printf("%d\n",s->top);
-    printf("%d popped out from stack!\n",s->arr[s->top]);
+    int val = s->arr[s->top]; 
     s->top--;
-    printf("%d\n",s->top);
+    return val;
 }
 int main() {
+    s = (Stack*)malloc(sizeof(Stack));
     int n;
-    printf("ENter the size of array : ");
+    printf("Enter the size of array : ");
     scanf("%d",&n);
     s->size = n;
     s->arr = (int*)malloc(s->size*sizeof(int));
@@ -59,9 +56,10 @@ int main() {
     push(4);
     push(5);
     push(6);
-    pop();
+    printf("%d popped from stack!\n",pop());
     push(7);
     push(8);
+    push(9);
     if(isEmpty()) {
         printf("Stack is empty!");
     } else {
