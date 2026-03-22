@@ -26,7 +26,6 @@ void push(int val) {
     }
     s->top++;
     s->arr[s->top] = val;
-    printf("Pushed %d to the satck!\n",val); // no need to do this, avoid
 }
 int pop() {
     if(isEmpty()) {
@@ -47,9 +46,11 @@ int peek(int pos) {
 } 
 int main() {
     s = (Stack*)malloc(sizeof(Stack));
-    int n;
+    int n,pos;
     printf("Enter the size of array : ");
     scanf("%d",&n);
+    printf("Enter the position of whose element you want to find : ");
+    scanf("%d",&pos);
     s->size = n;
     s->arr = (int*)malloc(s->size*sizeof(int));
     s->top = -1;
@@ -68,12 +69,7 @@ int main() {
     push(7);
     push(8);
     push(9);
-    printf("%d\n",peek(3));
-    if(isEmpty()) {
-        printf("Stack is empty!");
-    } else {
-        printf("Stack is not empty!\n");
-    }
+    printf("The value at position %d is %d.\n",pos, peek(pos));
     free(s->arr);
     return 0;
 }
