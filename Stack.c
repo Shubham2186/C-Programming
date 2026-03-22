@@ -43,7 +43,21 @@ int peek(int pos) {
         return -1;
     }
     return s->arr[d];
+}
+void stackTop() {
+    if(isEmpty()) {
+        printf("Stack is empty!\n");
+        return;
+    }
+    printf("%d is the topmost element.\n",s->arr[s->top]);
 } 
+void stackBottom() {
+    if(isEmpty()) {
+        printf("Stack is empty!\n");
+        return;
+    }
+    printf("%d is the topmost element.\n",s->arr[0]);
+}
 int main() {
     s = (Stack*)malloc(sizeof(Stack));
     int n,pos;
