@@ -24,8 +24,10 @@ char pop() {
         printf("Stack underflow!\n");
         return '\0';
     }
+    node* temp = top;
     char val = top->ch;
     top = top->next;
+    free(temp);
     return val;
 }
 int isBalanced(char exp[]) {
