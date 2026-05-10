@@ -12,14 +12,14 @@ int isEmpty() {
     }
     return 0;
 }
-// int isFull() {
-//     Node* Newnode = (Node*)malloc(sizeof(Node));
-//     if (Newnode == NULL) {
-//         printf("Stack Overflow!\nNode is unable to be created!\n");
-//         return 1;
-//     }
-//     return 0;
-// }
+int isFull() {
+    Node* Newnode = (Node*)malloc(sizeof(Node));
+    if (Newnode == NULL) {
+        printf("Stack Overflow!\nNode is unable to be created!\n");
+        return 1;
+    }
+    return 0;
+}
 void push(int val) {
     Node* NewNode = (Node*)malloc(sizeof(Node));
     if(NewNode == NULL) {
@@ -89,7 +89,6 @@ int main() {
     printf("element at position %d is %d.\n",4,peek(4));
     printf("Bottommost element of stack is %d.\n ",stackBottom());
     printf("Topmost element of stack is %d.\n ",stackTop());
-    // iBegin(6);
     traversal();
     return 0;
 }
