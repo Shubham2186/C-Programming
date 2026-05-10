@@ -41,7 +41,7 @@ int isBalanced(char exp[]) {
     return 0;
 }
 int main() {
-    char exp[100] = {'9','(','4',')','(',')'};
+    char exp[] = "2+(2+3)*(((()))";
     int result = isBalanced(exp);
     if(result) printf("Balanced!\n");
     else printf("Not!\n");
