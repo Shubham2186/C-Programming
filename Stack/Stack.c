@@ -68,8 +68,6 @@ int main() {
     s->size = n;
     s->arr = (int*)malloc(s->size*sizeof(int));
     s->top = -1;
-    // s->arr[0] = 2;
-    // s->top = 0;
     if(isEmpty()) {
         printf("Stack is empty!\n");
     } else {

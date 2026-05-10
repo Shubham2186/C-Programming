@@ -12,10 +12,10 @@ void Insertion_Sort(int arr[], int n) {
     }
 }
 int main() {
-    int arr[] = {5, 3, 8, 4, 2};
+    int arr[5] = {5, 3, 8, 4, 2};
     int n = sizeof(arr)/sizeof(arr[0]), i;
     Insertion_Sort(arr, n);
-    printf("Sorted array: ");
+    printf("Sorted array: \n");
     for (i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
